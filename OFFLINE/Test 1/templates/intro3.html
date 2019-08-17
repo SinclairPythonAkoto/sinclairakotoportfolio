@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+	.next {
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: 6.5%;
+      border-right: 
+      padding: 5px;
+      background-color: lightgray;
+      float: right;
+    }
+
+    .skip {
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: 5%;
+      border-right: 
+      padding: 5px;
+      background-color: lightgray;
+      float: left;
+    }
+
+    .previous {
+      float: right;
+    }
+
+    h1 {
+    	text-align: center;
+    }
+
+</style>
+
+<p>
+   and after making my first program <strong><a href="">(EasyCHEF!)</a></strong> I began learning to create web apps through Flask.
+
+</p>
+
+
+<br>
+<div>
+	<div class="next">
+		<a href="{{ url_for('intro4') }}">NEXT</a>
+	</div>
+
+  <div class="previous">
+    <a href="{{ url_for('intro2') }}">Previous</a>
+  </div>    
+
+	<div class="skip">
+		<a href="{{ url_for('home') }}">Skip</a>
+	</div>
+</div>
+
+
+{% endblock %}
