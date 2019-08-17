@@ -7,3 +7,5 @@ My CV is also interactive and a feedback form will be present to conduct researc
 Data will be stored with SQL.
 
 This portfolio will be constatly under construction as I will plan to apply new skills learned and also update my portfolio with newly created apps.
+
+The OFFLINE folder is my development folder until my app is ready for production.
