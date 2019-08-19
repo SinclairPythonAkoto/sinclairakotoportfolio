@@ -67,9 +67,9 @@ class Feedback_Page(Base):
 		self.email = email
 
 
-Session = sessionmaker(bind=engine)
-# Session = sessionmaker(autoflush=True)
-session = Session()
+# Session = sessionmaker(bind=engine)
+# # Session = sessionmaker(autoflush=True)
+# session = Session()
 
 @app.route('/')
 def intro1():
@@ -125,6 +125,9 @@ def review():
 		email = request.form.get('email')
 		review_message = request.form.get('subject')
 
+		Session = sessionmaker(bind = engine)
+		session = Session()
+		# the two steps above needed to query database
 		db_data = Review_Page(firstname, lastname, email, review_message)
 		session.add(db_data)
 		session.commit()
@@ -147,6 +150,9 @@ def feedback():
 		improve = request.form.get('improve')
 		email = request.form.get('email')
 
+		Session = sessionmaker(bind = engine)
+		session = Session()
+		# the two steps above needed to query database
 		db_data = Feedback_Page(name, experience, functionality, aesthetics, my_cv, my_webapp, outstanding, improve, email)
 		session.add(db_data)
 		session.commit()
@@ -166,6 +172,9 @@ def contact():
 		message = request.form.get('subject')
 		viewAll_db = request.form.get('viewAll')
 
+		Session = sessionmaker(bind = engine)
+		session = Session()
+		# the two steps above needed to query database
 		db_data = Contactme_Page(firstname, lastname, email, exposure, message)
 		session.add(db_data)
 		session.commit()	
