@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+	.content {
+		padding: 20px;
+		background-color: rgba(26,188,156,0.591);
+	}
+</style>
+
+<body class="pagestyle">
+	<h1 style="text-align:center">Homepage</h1>
+	<br>
+	<p>Welcome to my portfolio!!</p>
+
+	<p>Here you can browse through my pages - why don't you test out my apps or even leave a review.</p>
+	<br>
+	<div class="content">
+		<div>
+			<a href="{{ url_for('aboutme') }}">About Me</a>
+			<p>About Me page is a brief introduction to myself.</p>
+		</div>
+		<br>
+		<div>
+			<a href="{{ url_for('cv') }}">CV</a>    <div><p>Here you can view my current CV.</p></div>
+			
+		</div>
+		<br>
+		<div>
+			<a href="{{ url_for('web_apps') }}">Web Apps</a>
+			<p>In this page you can test the apps I have created.</p>
+		</div>
+		<br>
+		<div>
+			<a href="{{ url_for('review') }}">Reviews / Feedback</a>
+			<p>Complete my feedback form or simply leave a message on the Reviews page.</p>
+		</div>
+		<br>
+		<div>
+			<a href="{{ url_for('contact') }}">Contact</a>
+			<p>You have the option of contacting me or leaving your details for further work/collaboration etc.</p>
+		</div>
+	</div>
+</body>
+
+{% endblock %}

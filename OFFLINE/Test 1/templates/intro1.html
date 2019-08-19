@@ -2,55 +2,67 @@
 
 {% block content %}
 <style>
-	.next {
-      border: 1px solid black;
-      border-collapse: collapse;
-      width: 6.5%;
-      border-right: 
-      padding: 5px;
-      background-color: lightgray;
-      float: right;
-    }
+.next {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 6.5%;
+  border-right: 
+  padding: 5px;
+  background-color: #1abc9c;
+  float: right;
+}
 
-    .skip {
-      border: 1px solid black;
-      border-collapse: collapse;
-      width: 5%;
-      border-right: 
-      padding: 5px;
-      background-color: lightgray;
-      float: left;
-    }
+.skip {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 5%;
+  border-right: 
+  padding: 5px;
+  background-color: #1abc9c;
+  float: left;
+}
 
-    h1 {
-    	text-align: center;
-    }
+h1 {
+	text-align: center;
+}
 
-    .bk {
-    	text-align: right;
-    }
+.bk {
+	text-align: right;
+}
 
+/* Style the body */
+.pagestyle {
+  font-family: Arial;
+  margin: 0;
+  background-color: lightgray;
+}
+
+/* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+
+/* Page Content */
+.content {padding:20px;}
 </style>
-<div class="motto">
-	<h1>Design. Build. Apply!</h1>
-</div>
+<body class="pagestyle">
 
 <div>
-	<table>
-		<tr>
-			<th>SINCLAIR AKOTO PORTFOLIO</th>
-		</tr>
-	</table>
+	<h5>Design. Build. Apply!</h5>
 </div>
-<br>
-<div>
-	<div class="next">
-		<a href="{{ url_for('intro2') }}">NEXT</a>
-	</div>
-	<div class="skip">
-		<a href="{{ url_for('home') }}">Skip</a>
-	</div>
+<div class="header">
+  <h1>Sinclair Akoto</h1>
+  <h2>PORTFOLIO</h2>
 </div>
 
+<div class="">
+	<p>Click <a href="{{ url_for('home') }}">here</a> to be redirected to the <strong><a href="{{ url_for('home') }}">homepage</a></strong>.<p>
+</div>
+
+</body>
 
 {% endblock %}
