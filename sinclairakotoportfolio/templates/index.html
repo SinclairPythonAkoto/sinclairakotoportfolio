@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1>Flask SQLAlchemy Test</h1>
+<br>
+<p>This is just a quick web app to demonstrate the use of Flask SQLAlchemy, and deploying it on Heroku.</p>
+<br>
+<br>
+<p>Please click <strong><a href="{{ url_for('view_db') }}">here</a></strong> to view contents of the database.</p>
+<br>
+<br>
+<p>click <a href="{{ url_for('page_2') }}">here</a> to test if the background page will still load.</p>
+<br>
+<br>
+<p>Click <a href="{{ url_for('hello') }}">here</a> to load Hello World page!</p>
+{% endblock %}

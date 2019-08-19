@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+{% for d in data %}
+<ul>
+	<li>{{ d.name }} | {{ d.city }} | {{ d.info }}</li>
+</ul>
+{% endfor %}
+<br>
+<br>
+<a href="{{ url_for('index') }}">Home</a>
+
+
+
+{% endblock %}
