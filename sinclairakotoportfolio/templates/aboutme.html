@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background-color: white;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+* {box-sizing: border-box}
+
+.container {
+  width: 75%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.socail {font-size: 16px}
+
+.python {width: 40%; background-color: #4CAF50;}
+.html {width: 30%; background-color: #2196F3;}
+.sql {width: 35%; background-color: #f44336;}
+.css {width: 15%; background-color: #808080;}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center">About Me</h1>
+
+<div class="card">
+  <div class="container">
+    <img src="/static/SinPic.jpg" alt="Me" class="image" style="width:100%">
+    <a href="{{ url_for('cv') }}">View CV</a>
+  </div>
+  <h1>Sinclair Akoto</h1>
+  <p class="title">Aspiring Python / Web Developer</p>
+  <p>"...if you can think it you can build it." </p>
+  <p>What:  Python</p>
+  <p>Where: London / UK based.</p>
+  <p>When:  Technically since May 2018</p>
+  <p>Why:   To build & create web apps to increase productivity & profitability.</p>
+  <div style="margin: 24px 0;">
+    <a href="https://github.com/SinclairPythonAkoto"><i class="fa fa-github"></i></a> 
+    <a href="https://www.linkedin.com/in/sinclair-akoto-a6997a146/"><i class="fa fa-linkedin"></i></a>  
+    <a href="https://www.instagram.com/sin_ccity/?hl=en"><i class="fa fa-instagram"></i></a>  
+    <a href="https://www.facebook.com/moses.young.56?viewas=100000686899395&privacy_source=timeline_gear_menu&entry_point=action_bar#_"><i class="fa fa-facebook-square"></i></a>
+    <a href="#"><i class="fa fa-whatsapp"></i></a>
+    <a href="#"><i class="fa fa-youtube"></i></a>
+  </div>
+  <a href="/contact"><button>Contact</button></a>
+</div>
+<br>
+<br>
+
+<div class="socail">
+  <p>Within my bio you can also view my:</p>
+  <p><a href="https://github.com/SinclairPythonAkoto">GitHub</a></p>
+  <p><a href="https://www.linkedin.com/in/sinclair-akoto-a6997a146/">LinkedIn</a></p>
+  <p><a href="https://www.instagram.com/sin_ccity/?hl=en">Instagram</a></p>
+  <p><a href="https://www.facebook.com/moses.young.56?viewas=100000686899395&privacy_source=timeline_gear_menu&entry_point=action_bar#_">Facebook</a></p>
+</div>
+<br>
+
+<p><strong>Scroll below to view how I am progressing with Python and other programming languages.</strong></p>
+
+<h3>My Skills</h3>
+
+<p>Python & Flask</p>
+<div class="container">
+  <div class="skills python">40%</div>
+</div>
+
+<p>HTML</p>
+<div class="container">
+  <div class="skills html">30%</div>
+</div>
+
+<p>SQL</p>
+<div class="container">
+  <div class="skills sql">35%</div>
+</div>
+
+<p>CSS</p>
+<div class="container">
+  <div class="skills css">15%</div>
+</div>
+
+<p>As you can see I still have <strong >a lot</strong> to learn!</p>
+
+</body>
+
+{% endblock %}

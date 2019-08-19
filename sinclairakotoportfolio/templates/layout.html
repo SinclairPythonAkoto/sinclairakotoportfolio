@@ -1,16 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Heroku Flask SQLAlchemy</title>
+        <title>Sinclair Akoto</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input[type=text], select, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          margin-top: 6px;
+          margin-bottom: 16px;
+          resize: vertical;
+        }
+
+        input[type=submit] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+
+
+        table {
+            border: 2px solid black;
+            border-collapse: collapse;
+            width: 50%;
+        }
         
-    </head>
-    <body>
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: lightgray;
+        }
+
+        
+
+        .next {
+          border: 1px solid black;
+          border-collapse: collapse;
+          width: 6.5%;
+          border-right: 
+          padding: 5px;
+          background-color: #1abc9c;
+          float: right;
+        }
+
+        .skip {
+          border: 1px solid black;
+          border-collapse: collapse;
+          width: 5%;
+          border-right: 
+          padding: 5px;
+          background-color: #1abc9c;
+          float: left;
+        }
+
+        .topnav {
+          overflow: hidden;
+          background-color: #333;
+        }
+
+        .topnav a {
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+
+        .topnav a:hover {
+          background-color: #1abc9c;
+          color: black;
+        }
+
+        .topnav a.active {
+          background-color: #4CAF50;
+          color: white;
+        }
+
+        .pagestyle {
+          font-family: Arial;
+          margin: 0;
+          background-color: lightgray;
+        }
+
+        .content {
+          padding: 20px;
+          background-color: rgba(26,188,156,0.591);
+        }
+
+        .container {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+          width: 50%;
+        }
+
+        .containerFeedback {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+          width: 55%;
+        }
+
+        .emoji {
+          font-size: 20px;
+          width: 57%;
+        }
+
+    </style>
+    <body class="pagestyle">
+        <div class="topnav">
+            <a href="{{  url_for('intro1') }}">START</a>
+            <a href="{{ url_for('aboutme') }}">About Me</a>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('cv') }}">CV</a>
+            <a href="{{ url_for('web_apps') }}">Web Apps</a>
+            <a href="{{ url_for('review') }}">Reviews / Feedback</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('interactive') }}">Interactive!</a>
+        </div>
         {% block body %}
 
         {% block content %}{% endblock %}
 
         {% endblock %}
     </body>
+    <br>
+    <br>
+    <br>
+    <footer>Design. Build. Apply!</footer>
 </html>

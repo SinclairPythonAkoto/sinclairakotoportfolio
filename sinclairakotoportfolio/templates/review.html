@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<style>
+	.content {
+		padding: 20px;
+		background-color: rgba(26,188,156,0.591);
+	}
+
+	input[type=text], select, textarea {
+	  width: 100%;
+	  padding: 12px;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  margin-top: 6px;
+	  margin-bottom: 16px;
+	  resize: vertical;
+	}
+
+	input[type=submit] {
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 12px 20px;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+	  background-color: #45a049;
+	}
+
+	.container {
+	  border-radius: 5px;
+	  background-color: #f2f2f2;
+	  padding: 20px;
+	  width: 50%;
+	}
+
+</style>
+
+<h1 style="text-align:center">Reviews / Feedback</h1>
+
+<div class="info_review">
+	<p>How are you liking my portfolio so far?</p>
+	<p>Have you tried testing out my web apps yet?</p>
+</div>
+<br>
+<div class="content">
+	<div class="container">
+		<form action="{{ url_for('review' )}}" method="post">
+			<h3>Leave A Review...</h3>
+			<label for="fname">First Name</label>
+		    <input type="text" id="fname" name="firstname" placeholder="Your first name.." required>
+
+		    <label for="lname">Last Name</label>
+		    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+		    <label for="user_email">Email</label>
+    		<input type="text" name="email" placeholder="Enter email..">
+		    <label for="mesage">Write a Message Or Leave a Review!</label>
+		    <textarea id="subject" name="subject" placeholder="How was your experience?  Leave a review, your feedback is important to me." style="height:200px" required></textarea>
+
+		    <input type="submit" value="Submit">
+		</form>
+	</div>
+</div>
+<div class="reviewFeed">
+	<p>Would you like to fill in a feedback form?  Click <a href="{{ url_for('feedback') }}">here</a>.</p>
+	<br>
+	<br>
+	<div class="viewReiew">
+		<h2>Reviews</h2>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>SURNAME</th>
+				<th>EMAIL</th>
+				<th>REIVEW / MESSAGE</th>
+			</tr>
+			{% for d in data %}
+			<tr>
+				<td>{{ d.id }}</td>
+				<td>{{ d.firstname }}</td>
+				<td>{{ d.lastname }}</td>
+				<td>{{ d.email }}</td>
+				<td>{{ d.review_message }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+
+{% endblock %}

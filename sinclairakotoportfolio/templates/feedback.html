@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1 style="text-align: center">Sinclair's Feedback Form</h1>
+
+<div>
+		<div>
+			<p>
+				Your feedback is very important to me, it will give me an idea on where I am excelling and areas I need to improve.
+			</p>
+			<div class="content">
+				<h2 style="text-align: left">Feedback Form</h2>
+				<P>
+					Please complete the feedback form below.
+				</P>
+				<div class="containerFeedback">
+					<form action="{{ url_for('feedback') }}" method="post">
+					<div class="form-group">
+						<label for="inputname" class="sr-only">Name</label>
+						<input type="text" name="name" id="inputname" class="form-control" placeholder="Enter your name" required autofocus>
+						<label for="totexperience">How would you rate the total experience of my portfolio?</label>
+						<div class="emoji">
+							<select class="emoji" name="experience">
+								<option disabled selected value="">Please Select</option>
+								<option value="excellent_10">&#129321</option>
+								<option value="great_9">&#129297</option>
+								<option value="cool_8">&#128526</option>
+								<option value="satisfactory_7">&#128077</option>
+								<option value="good_6">&#128578</option>
+								<option value="confusing_5">&#129300</option>
+								<option value="boring_4">&#128564</option>
+								<option value="bad_3">&#128078</option>
+								<option value="annoying_2">&#129324</option>
+								<option value="rubbish_1">&#128169</option>
+							</select>
+						</div>
+						<br>
+						<label for="userFunctionality">Functionality / User friendly?</label>
+						<div class="emoji" name="web_func">
+							<select class="emoji" name="functionality">
+								<option disabled selected value="">Please Select</option>
+								<option value="excellent_10">&#129321</option>
+								<option value="great_9">&#129297</option>
+								<option value="cool_8">&#128526</option>
+								<option value="satisfactory_7">&#128077</option>
+								<option value="good_6">&#128578</option>
+								<option value="confusing_5">&#129300</option>
+								<option value="boring_4">&#128564</option>
+								<option value="bad_3">&#128078</option>
+								<option value="annoying_2">&#129324</option>
+								<option value="rubbish_1">&#128169</option>
+							</select>
+						</div>
+						<br>
+						<label for="portfAsthetics">Aesthetics of portfolio?</label>
+						<div class="emoji" name="looks">
+							<select class="emoji" name="aesthetics">
+								<option disabled selected value="">Please Select</option>
+								<option value="excellent_10">&#129321</option>
+								<option value="great_9">&#129297</option>
+								<option value="cool_8">&#128526</option>
+								<option value="satisfactory_7">&#128077</option>
+								<option value="good_6">&#128578</option>
+								<option value="confusing_5">&#129300</option>
+								<option value="boring_4">&#128564</option>
+								<option value="bad_3">&#128078</option>
+								<option value="annoying_2">&#129324</option>
+								<option value="rubbish_1">&#128169</option>
+							</select>
+						</div>
+						<br>
+						<label for="myCV">My CV</label>
+						<div class="emoji" name="myCv">
+							<select class="emoji" name="my_cv">
+								<option disabled selected value="">Please Select</option>
+								<option value="excellent_10">&#129321</option>
+								<option value="great_9">&#129297</option>
+								<option value="cool_8">&#128526</option>
+								<option value="satisfactory_7">&#128077</option>
+								<option value="good_6">&#128578</option>
+								<option value="confusing_5">&#129300</option>
+								<option value="boring_4">&#128564</option>
+								<option value="bad_3">&#128078</option>
+								<option value="annoying_2">&#129324</option>
+								<option value="rubbish_1">&#128169</option>
+							</select>
+						</div>
+						<br>
+						<label for="myWebapp">My Web Apps</label>
+						<div class="emoji" name="myWebapp">
+							<select class="emoji" name="my_webapp">
+								<option disabled selected value="">Please Select</option>
+								<option value="excellent_10">&#129321</option>
+								<option value="great_9">&#129297</option>
+								<option value="cool_8">&#128526</option>
+								<option value="satisfactory_7">&#128077</option>
+								<option value="good_6">&#128578</option>
+								<option value="confusing_5">&#129300</option>
+								<option value="boring_4">&#128564</option>
+								<option value="bad_3">&#128078</option>
+								<option value="annoying_2">&#129324</option>
+								<option value="rubbish_1">&#128169</option>
+							</select>
+						</div>
+						<br>
+						<label>Which page do you feel was the most outstanding?</label>
+						<select name="outstanding">
+							<option disabled selected value="">Please Select</option>
+							<option value="start_pg">START</option>
+							<option value="about_me_pg">About Me</option>
+							<option value="home_pg">Home</option>
+							<option value="cv_pg">CV</option>
+							<option value="web_apps_pg">Web Apps</option>
+							<option value="review_pg">Review</option>
+							<option value="feedback_pg">Feedback</option>
+							<option value="contact_pg">Contact</option>
+						</select>
+						<label>Wwhich page did you feel that needed improving?</label>
+						<select name="improve">
+							<option disabled selected value="">Please Select</option>
+							<option value="start_pg">START</option>
+							<option value="about_me_pg">About Me</option>
+							<option value="home_pg">Home</option>
+							<option value="cv_pg">CV</option>
+							<option value="web_apps_pg">Web Apps</option>
+							<option value="review_pg">Review</option>
+							<option value="feedback_pg">Feedback</option>
+							<option value="contact_pg">Contact</option>
+						</select>
+						<label for="inputemail" class="sr-only">Email</label>
+						<input type="text" name="email" id="inputemail" placeholder="Enter your email" autofocus>
+						<input type="submit" value="Submit">
+					</div>
+				</form>
+					</div>
+				</div>
+
+			</div>
+			<div>
+				<p>
+					Thank you for taking time to complete the feedback form.
+				</p>
+				<br>
+				<p>
+					Click <a href="{{ url_for('contact') }}">here</a> if you would like to send me a message.
+				</p>
+			</div>
+			<div class="feedbackResults">
+				<h2>Feedback Form Results</h2>
+				<table>
+					<tr>
+						<th>ID</th>
+						<th>NAME</th>
+						<th>EXPERIENCE</th>
+						<th>FUNCTIONALITY</th>
+						<th>AESTHETICS</th>
+						<th>MY CV</th>
+						<th>WEB APPS</th>
+						<th>OUTSTANDING</th>
+						<th>NEEDS IMPROVING</th>
+					</tr>
+					{% for d in data %}
+					<tr>
+						<td>{{ d.id }}</td>
+						<td>{{ d.name }}</td>
+						<td>{{ d.experience }}</td>
+						<td>{{  d.functionality }}</td>
+						<td>{{ d.aesthetics }}</td>
+						<td>{{ d.my_cv }}</td>
+						<td>{{ d.my_webapp }}</td>
+						<td>{{ d.outstanding }}</td>
+						<td>{{ d.improve }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+</div>
+
+{% endblock %}

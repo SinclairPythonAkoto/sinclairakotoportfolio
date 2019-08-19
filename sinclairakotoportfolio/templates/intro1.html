@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+.next {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 6.5%;
+  border-right: 
+  padding: 5px;
+  background-color: #1abc9c;
+  float: right;
+}
+
+.skip {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 5%;
+  border-right: 
+  padding: 5px;
+  background-color: #1abc9c;
+  float: left;
+}
+
+h1 {
+	text-align: center;
+}
+
+.bk {
+	text-align: right;
+}
+
+/* Style the body */
+.pagestyle {
+  font-family: Arial;
+  margin: 0;
+  background-color: lightgray;
+}
+
+/* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+
+/* Page Content */
+.content {padding:20px;}
+</style>
+<body class="pagestyle">
+
+<div>
+	<h5>Design. Build. Apply!</h5>
+</div>
+<div class="header">
+  <h1>Sinclair Akoto</h1>
+  <h2>PORTFOLIO</h2>
+</div>
+
+<div class="">
+	<p>Click <a href="{{ url_for('home') }}">here</a> to be redirected to the <strong><a href="{{ url_for('home') }}">homepage</a></strong>.<p>
+</div>
+
+</body>
+
+{% endblock %}
