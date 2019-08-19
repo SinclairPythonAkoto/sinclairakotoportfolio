@@ -1,1 +1,1 @@
-web: gunicorn jobs-log.wsgi:application --log-file=-
+web: gunicorn sinclairakotoportfolio.wsgi:application --log-file=-
