@@ -1,1 +1,1 @@
-web: gunicorn sinclairakotoportfolio.wsgi:application --preload
+web: gunicorn sinclairakotoportfolio.wsgi:application --log-file=-
