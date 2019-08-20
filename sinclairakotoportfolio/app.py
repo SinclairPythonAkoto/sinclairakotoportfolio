@@ -1,12 +1,13 @@
 import os
 import psycopg2
+from flask import request
 from flask import Flask, render_template, g, url_for, request, redirect
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 from flask_sqlalchemy import SQLAlchemy
 
-from flask import request
+
 
 
 app = Flask(__name__)
