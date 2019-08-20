@@ -48,9 +48,10 @@
 	<p>Have you tried testing out my web apps yet?</p>
 </div>
 <br>
+<form action="{{ url_for('review' )}}" method="post">
 <div class="content">
 	<div class="container">
-		<form action="{{ url_for('review' )}}" method="post">
+
 			<h3>Leave A Review...</h3>
 			<label for="fname">First Name</label>
 		    <input type="text" id="fname" name="firstname" placeholder="Your first name.." required>
@@ -63,13 +64,15 @@
 		    <textarea id="subject" name="subject" placeholder="How was your experience?  Leave a review, your feedback is important to me." style="height:200px" required></textarea>
 
 		    <input type="submit" value="Submit">
-		</form>
+
 	</div>
 </div>
 <div class="reviewFeed">
 	<p>Would you like to fill in a feedback form?  Click <a href="{{ url_for('feedback') }}">here</a>.</p>
 	<br>
 	<br>
+	<br>
+	{% if data %}
 	<div class="viewReiew">
 		<h2>Reviews</h2>
 		<table>
@@ -91,6 +94,8 @@
 			{% endfor %}
 		</table>
 	</div>
+	{% endif %}
 </div>
+</form>
 
 {% endblock %}

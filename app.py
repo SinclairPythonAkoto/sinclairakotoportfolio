@@ -98,6 +98,7 @@ def web_apps():
 @app.route('/review', methods=['GET', 'POST'])
 def review():
 	if request.method == 'GET':
+		data = session.query(Review_Page).all()
 		return render_template('review.html')
 	else:
 		firstname = request.form.get('firstname')
@@ -118,7 +119,8 @@ def review():
 @app.route('/feedback', methods=['GET', 'POST'])
 def feedback():
 	if request.method == 'GET':
-		return render_template('feedback.html')
+		data = session.query(Feedback_Page).all()
+		return render_template('feedback.html' , data=data)
 	else:
 		name = request.form.get('name')
 		experience = request.form.get('experience')
@@ -143,6 +145,7 @@ def feedback():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
 	if request.method == 'GET':
+		data = session.query(Contactme_Page).all()
 		return render_template('contact.html')
 	else:
 		firstname = request.form.get('firstname')

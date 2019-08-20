@@ -68,7 +68,6 @@ class Feedback_Page(Base):
 
 
 Session = sessionmaker(bind=engine)
-# Session = sessionmaker(autoflush=True)
 session = Session()
 
 @app.route('/')
@@ -118,22 +117,30 @@ def web_apps():
 @app.route('/review', methods=['GET', 'POST'])
 def review():
 	if request.method == 'GET':
-		return render_template('review.html')
+		data = session.query(Review_Page).all()
+		return render_template('review.html', data=data)
 	else:
 		firstname = request.form.get('firstname')
 		lastname = request.form.get('lastname')
 		email = request.form.get('email')
 		review_message = request.form.get('subject')
 
-		Session = sessionmaker(bind = engine)
-		session = Session()
+	
 		# the two steps above needed to query database
 		db_data = Review_Page(firstname, lastname, email, review_message)
 		session.add(db_data)
 		session.commit()
-		data = session.query(Review_Page).all()
 
-		return render_template('review.html', data=data)
+		if request.form.get('view_all_reviews') == "viewAll":
+			view_data = session.query(Review_Page).all()
+			return render_template('review.html', view_data=view_data)
+		elif request.form.get('viewAll_db') == None:
+			return redirect(url_for('home'))
+		else:
+			data = session.query(Review_Page).all()
+			return render_template('review.html', data=data)
+
+		
 
 @app.route('/feedback', methods=['GET', 'POST'])
 def feedback():
@@ -150,12 +157,14 @@ def feedback():
 		improve = request.form.get('improve')
 		email = request.form.get('email')
 
-		Session = sessionmaker(bind = engine)
-		session = Session()
-		# the two steps above needed to query database
 		db_data = Feedback_Page(name, experience, functionality, aesthetics, my_cv, my_webapp, outstanding, improve, email)
 		session.add(db_data)
 		session.commit()
+
+		# if request.form.get('view_all_reviews') == "viewAll":
+		# 	data = session.query()
+
+
 		data = session.query(Feedback_Page).all()
 
 		return render_template('feedback.html', data=data)
