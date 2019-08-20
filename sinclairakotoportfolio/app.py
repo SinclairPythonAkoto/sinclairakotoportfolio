@@ -74,8 +74,8 @@ class Contactme_Page(Base):
 		self.exposure = exposure
 		self.message = message
 
-Session = sessionmaker(bind=engine)
-session = Session()
+# Session = sessionmaker(bind=engine)
+# session = Session()
 
 @app.route('/')
 def intro1():
