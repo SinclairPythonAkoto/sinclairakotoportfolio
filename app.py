@@ -45,7 +45,7 @@ class Feedback_Page(Base):
 	my_webapp = Column('my_webapp', String(12))
 	outstanding = Column('outstanding', String(15))
 	improve = Column('improve', String(15))
-	email = Column('email', String(30))
+	email = Column('email', String(50))
 
 	def __init__(self, name, experience, functionality, aesthetics, my_cv, my_webapp, outstanding, improve, email):
 		self.name = name
