@@ -44,7 +44,7 @@ class Review_Page(Base):
 
 class Feedback_Page(Base):
 	__tablename__ = 'feedback_page'
-	id = Column('id', primary_key=True)
+	id = Column('id', Integer, primary_key=True)
 	name = Column('name', String(20))
 	experience = Column('experience', String(12))
 	functionality = Column('functionality', String(12))
@@ -145,6 +145,7 @@ def review():
 @app.route('/feedback', methods=['GET', 'POST'])
 def feedback():
 	if request.method == 'GET':
+		# data = session.query(Feedback_Page).all()	
 		return render_template('feedback.html')
 	else:
 		name = request.form.get('name')
@@ -161,10 +162,6 @@ def feedback():
 		session.add(db_data)
 		session.commit()
 
-		# if request.form.get('view_all_reviews') == "viewAll":
-		# 	data = session.query()
-
-
 		data = session.query(Feedback_Page).all()
 
 		return render_template('feedback.html', data=data)
@@ -179,7 +176,6 @@ def contact():
 		email = request.form.get('email')
 		exposure = request.form.get('exposure')
 		message = request.form.get('subject')
-		viewAll_db = request.form.get('viewAll')
 
 		Session = sessionmaker(bind = engine)
 		session = Session()
@@ -189,8 +185,6 @@ def contact():
 		session.commit()	
 		data = session.query(Contactme_Page).all()
 
-		if request.form.get('viewAll_btn'):
-			return render_template('contact.html', data=data, viewAll_db=viewAll_db)
 		return render_template('contact.html', data=data, viewAll_db=viewAll_db)
 
 @app.route('/interactive')
