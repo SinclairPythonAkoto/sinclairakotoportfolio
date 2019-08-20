@@ -36,7 +36,7 @@ class Review_Page(Base):
 
 class Feedback_Page(Base):
 	__tablename__ = 'feedback_page'
-	id = Column('id', primary_key=True)
+	id = Column('id', Integer, primary_key=True)
 	name = Column('name', String(20))
 	experience = Column('experience', String(12))
 	functionality = Column('functionality', String(12))
