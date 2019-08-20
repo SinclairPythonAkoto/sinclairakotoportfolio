@@ -67,9 +67,9 @@ class Feedback_Page(Base):
 		self.email = email
 
 
-# Session = sessionmaker(bind=engine)
-# # Session = sessionmaker(autoflush=True)
-# session = Session()
+Session = sessionmaker(bind=engine)
+# Session = sessionmaker(autoflush=True)
+session = Session()
 
 @app.route('/')
 def intro1():
