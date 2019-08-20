@@ -1,6 +1,6 @@
 import os
 import psycopg2
-from flask import Flask, render_template, g, url_for
+from flask import Flask, render_template, g, url_for, request, redirect
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
