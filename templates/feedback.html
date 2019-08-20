@@ -148,6 +148,7 @@
 			</div>
 			<div class="feedbackResults">
 				<h2>Feedback Form Results</h2>
+				{% if data %}
 				<table>
 					<tr>
 						<th>ID</th>
@@ -174,6 +175,7 @@
 					</tr>
 					{% endfor %}
 				</table>
+				{% endif %}
 			</div>
 		</div>
 </div>

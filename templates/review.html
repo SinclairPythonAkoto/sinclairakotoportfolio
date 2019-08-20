@@ -72,6 +72,7 @@
 	<br>
 	<div class="viewReiew">
 		<h2>Reviews</h2>
+		{% if data %}
 		<table>
 			<tr>
 				<th>ID</th>
@@ -88,6 +89,7 @@
 			</tr>
 			{% endfor %}
 		</table>
+		{% endif %}
 	</div>
 </div>
 
