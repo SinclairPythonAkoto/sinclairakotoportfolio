@@ -79,30 +79,6 @@ class Contactme_Page(Base):
 def intro1():
 	return render_template('intro1.html')
 
-@app.route('/intro2')
-def intro2():
-	return render_template('intro2.html')
-
-@app.route('/intro3')
-def intro3():
-	return render_template('intro3.html')
-
-@app.route('/intro4')
-def intro4():
-	return render_template('intro4.html')
-
-@app.route('/intro5')
-def intro5():
-	return render_template('intro5.html')
-
-@app.route('/intro6')
-def intro6():
-	return render_template('intro6.html')
-
-@app.route('/intro7')
-def intro7():
-	return render_template('intro7.html')
-
 @app.route('/aboutme')
 def aboutme():
 	return render_template('aboutme.html')
@@ -174,8 +150,7 @@ def contact():
 		email = request.form.get('email')
 		exposure = request.form.get('exposure')
 		message = request.form.get('subject')
-		viewAll_db = request.form.get('viewAll')
-
+		
 		Session = sessionmaker(bind = engine)
 		session = Session()
 		# the two steps above needed to query database
@@ -184,8 +159,6 @@ def contact():
 		session.commit()	
 		data = session.query(Contactme_Page).all()
 
-		if request.form.get('viewAll_btn'):
-			return render_template('contact.html', data=data, viewAll_db=viewAll_db)
 		return render_template('contact.html', data=data, viewAll_db=viewAll_db)
 
 @app.route('/interactive')
