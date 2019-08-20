@@ -140,6 +140,8 @@ def feedback():
 		session.commit()
 		data = session.query(Feedback_Page).all()
 
+		if data == None:
+			return render_template('feedback.html')
 		return render_template('feedback.html', data=data)
 
 @app.route('/contact', methods=['GET', 'POST'])
