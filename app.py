@@ -98,7 +98,8 @@ def web_apps():
 @app.route('/review', methods=['GET', 'POST'])
 def review():
 	if request.method == 'GET':
-		return render_template('review.html')
+		data = session.query(Review_Page).all()
+		return render_template('review.html', data=data)
 	else:
 		firstname = request.form.get('firstname')
 		lastname = request.form.get('lastname')
