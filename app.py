@@ -75,6 +75,9 @@ class Contactme_Page(Base):
 		self.message = message
 
 
+Session = sessionmaker(bind = engine)
+session = Session()
+
 @app.route('/')
 def intro1():
 	return render_template('intro1.html')
@@ -106,9 +109,6 @@ def review():
 		email = request.form.get('email')
 		review_message = request.form.get('subject')
 
-		Session = sessionmaker(bind = engine)
-		session = Session()
-		# the two steps above needed to query database
 		db_data = Review_Page(firstname, lastname, email, review_message)
 		session.add(db_data)
 		session.commit()
