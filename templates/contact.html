@@ -75,7 +75,6 @@ input[type=submit]:hover {
     <h2>Contacts</h2>
     <table>
       <tr>
-        <th>ID</th>
         <th>NAME</th>
         <th>SURNAME</th>
         <th>EXPOSURE</th>
@@ -83,7 +82,6 @@ input[type=submit]:hover {
       </tr>
       {% for d in data %}
       <tr>
-        <td>{{ d.id }}</td>
         <td>{{ d.firstname }}</td>
         <td>{{ d.lastname }}</td>
         <td>{{ d.exposure }}</td>

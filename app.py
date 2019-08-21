@@ -131,9 +131,6 @@ def feedback():
 		improve = request.form.get('improve')
 		email = request.form.get('email')
 
-		Session = sessionmaker(bind = engine)
-		session = Session()
-		# the two steps above needed to query database
 		db_data = Feedback_Page(name, experience, functionality, aesthetics, my_cv, my_webapp, outstanding, improve, email)
 		session.add(db_data)
 		session.commit()
@@ -144,17 +141,15 @@ def feedback():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
 	if request.method == 'GET':
-		return render_template('contact.html')
+		data = session.query(Contactme_Page).all()
+		return render_template('contact.html', data=data)
 	else:
 		firstname = request.form.get('firstname')
 		lastname = request.form.get('lastname')
 		email = request.form.get('email')
 		exposure = request.form.get('exposure')
 		message = request.form.get('subject')
-		
-		Session = sessionmaker(bind = engine)
-		session = Session()
-		# the two steps above needed to query database
+
 		db_data = Contactme_Page(firstname, lastname, email, exposure, message)
 		session.add(db_data)
 		session.commit()	
