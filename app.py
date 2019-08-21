@@ -119,7 +119,8 @@ def review():
 @app.route('/feedback', methods=['GET', 'POST'])
 def feedback():
 	if request.method == 'GET':
-		return render_template('feedback.html')
+		data = session.query(Feedback_Page).all()
+		return render_template('feedback.html', data=data)
 	else:
 		name = request.form.get('name')
 		experience = request.form.get('experience')
