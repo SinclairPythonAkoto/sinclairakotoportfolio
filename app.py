@@ -156,7 +156,7 @@ def contact():
 		session.commit()	
 		data = session.query(Contactme_Page).all()
 
-		return render_template('contact.html', data=data, viewAll_db=viewAll_db)
+		return render_template('contact.html', data=data)
 
 @app.route('/interactive')
 def interactive():
